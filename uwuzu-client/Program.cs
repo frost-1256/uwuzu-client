@@ -4,7 +4,14 @@ class uwuzu_client
 {
     static void Main(string[] args)
     {
-        Console.WriteLine(args.Length);
-        Console.WriteLine(args[0]);
+        if (args.Length == 0)
+        {
+            Console.WriteLine("コマンドライン引数はありません。");
+        }
+        else
+        {
+            foreach (string arg in args)
+                Console.WriteLine(arg);
+        }
     }
 }
