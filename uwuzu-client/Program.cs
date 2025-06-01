@@ -40,7 +40,7 @@ class uwuzu_client
                     }
                     else
                     {
-                        serverUrl = "uwuzu.net";
+                        serverUrl = "uwuzu.net ";
                         Console.WriteLine("サーバーURLが指定されていません。");
                     }
                 }
