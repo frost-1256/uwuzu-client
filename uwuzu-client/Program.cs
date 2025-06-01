@@ -95,7 +95,8 @@ namespace uwuzu_client
                     else if (command.Equals("me", StringComparison.OrdinalIgnoreCase))
                     {
                         // ここに "me" コマンドの処理を追加
-                        Console.WriteLine("自分の情報を表示する機能はまだ実装されていません。");
+                        string response = await command.getme(serverUrl, apiKey);
+                        Console.WriteLine(response);
                     }
                     else if (command.Equals("help", StringComparison.OrdinalIgnoreCase))
                     {
