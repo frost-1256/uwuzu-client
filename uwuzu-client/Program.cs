@@ -85,9 +85,10 @@ namespace uwuzu_client
                 Console.WriteLine("使用方法 \nme: 自分の名前とユーザー名, フォロー中, フォロワーを表示\nhelp: コマンドヘルプを表示\nclear: ログをクリア\nexit: クライアントを終了");
                 while (true)
                 {
-                    Console.Write("> ");
+                    Console.Write($"{serverUrl}> ");
                     string command = Console.ReadLine();
-                    Console.WriteLine(command);
+                    // Console.WriteLine(command);
+                    // obsolete code
                     if (command is null)
                     {
                         Console.WriteLine("コマンドが入力されていません。");
@@ -96,6 +97,14 @@ namespace uwuzu_client
                     {
                         // ここに "me" コマンドの処理を追加
                         string response = await command.getme(serverUrl, apiKey);
+                        Console.WriteLine(response);
+                    }
+                    else if (command.Equals("ueuse", StringComparison.OrdinalIgnoreCase))
+                    {
+                        // ここに "ueuse" コマンドの処理を追加
+                        Console.Write("ueuse> ");
+                        string content = Console.ReadLine(); // ユーザーからの入力を待つ
+                        string response = await command.ueuse(serverUrl, apiKey, content);
                         Console.WriteLine(response);
                     }
                     else if (command.Equals("help", StringComparison.OrdinalIgnoreCase))
