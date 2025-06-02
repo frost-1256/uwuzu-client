@@ -86,9 +86,11 @@ namespace uwuzu_client
                 while (true)
                 {
                     Console.Write($"{serverUrl}> ");
+#pragma warning disable CS8600 // Null リテラルまたは Null の可能性がある値を Null 非許容型に変換しています。
                     string command = Console.ReadLine();
-                    // Console.WriteLine(command);
-                    // obsolete code
+#pragma warning restore CS8600 // Null リテラルまたは Null の可能性がある値を Null 非許容型に変換しています。
+                              // Console.WriteLine(command);
+                              // obsolete code
                     if (command is null)
                     {
                         Console.WriteLine("コマンドが入力されていません。");
@@ -103,7 +105,9 @@ namespace uwuzu_client
                     {
                         // ここに "ueuse" コマンドの処理を追加
                         Console.Write("ueuse> ");
+#pragma warning disable CS8600 // Null リテラルまたは Null の可能性がある値を Null 非許容型に変換しています。
                         string content = Console.ReadLine(); // ユーザーからの入力を待つ
+#pragma warning restore CS8600 // Null リテラルまたは Null の可能性がある値を Null 非許容型に変換しています。
                         string response = await command.ueuse(serverUrl, apiKey, content);
                         Console.WriteLine(response);
                     }
